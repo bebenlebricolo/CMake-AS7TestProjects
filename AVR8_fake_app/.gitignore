@@ -1,0 +1,16 @@
+# Vscode editor settings
+.vscode/
+
+# Build directories
+[Bb]uild*/
+[Rr]elease*/
+[Bb]in/
+[Dd]ebug/
+
+# Built binaries
+*.out
+*.o
+*.a
+*.lib
+*.so
+*.dll
