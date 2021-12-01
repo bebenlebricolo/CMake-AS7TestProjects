@@ -3,7 +3,7 @@ This fake application is used to test the CMakeAS7 version implementation and ch
 It is only a very basic application that essentially does nothing.
 
 # Configure/build
-Using the latest revision of [CMake-AtmelStudio7-Compatibility](https://github.com/bebenlebricolo/CMake-AtmelStudio7-compatibility) project at hands (an extracted .zip archive will do), open a command prompt (git bash, Windows Terminal, etc.) and run those commands :
+Using the latest revision of [CMakeAS7](https://github.com/bebenlebricolo/CMakeAS7) project at hands (an extracted .zip archive will do), open a command prompt (git bash, Windows Terminal, etc.) and run those commands :
 ```bash
 mkdir build
 cd build
