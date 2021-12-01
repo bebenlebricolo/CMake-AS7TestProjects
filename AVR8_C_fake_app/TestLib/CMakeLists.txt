@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 
 add_library(testlib STATIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/testlib.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/inc/testlib.h
 )
 
 target_include_directories(testlib PUBLIC
