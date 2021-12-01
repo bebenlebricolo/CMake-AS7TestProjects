@@ -13,6 +13,14 @@ set (CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Wl,-Map=${Map_file}")
 set (CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Wl,-Map=${Map_file}")
 set (CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -Wl,-Map=${Map_file}")
 
+set(ADDITIONAL_CFLAGS "-Wall -DTEST_DEFINITION=33 -Wextra -fpedantic -O2 -O3 -O0 -g1 -g2 -g3  -ffunction-sections -fpedantic-errors -mcall-prologues -mno-interrupts -funsigned-char -nostdinc -fpack-struct -mshort-calls -std=c11 -Wno-unused-parameter -Wno-error=unused-function -Wno-error=unused-variable")
+
+# Add those flags to the already existing ones for this target
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} ${ADDITIONAL_CFLAGS}")
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} ${ADDITIONAL_CFLAGS}")
+set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} ${ADDITIONAL_CFLAGS}")
+set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} ${ADDITIONAL_CFLAGS}")
+
 target_link_libraries(firmware
     testlib
 )
