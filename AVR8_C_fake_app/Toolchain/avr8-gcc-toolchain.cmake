@@ -5,13 +5,17 @@ if(WIN32 AND NOT CMAKE_GENERATOR STREQUAL "Unix Makefiles")
   set( CMAKE_SYSTEM_NAME "BareMetal" )
   set( CMAKE_SYSTEM_VERSION "Generic" )
   set( CMAKE_SYSTEM_VENDOR_NAME "Atmel" )
-  set (CMAKE_GENERATOR_PLATFORM AVR8)
+  set( CMAKE_GENERATOR_PLATFORM AVR8)
+
 else()
   set( CMAKE_SYSTEM_NAME "Generic" )
   set( CMAKE_SYSTEM_VERSION "Generic" )
   set( CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 endif()
-  set( CMAKE_SYSTEM_PROCESSOR AVR8 )
+
+set( CMAKE_SYSTEM_PROCESSOR AVR8 )
+set( CMAKE_C_COMPILER_WORKS 1)
+set( CMAKE_CXX_COMPILER_WORKS 1)
 
 
 find_program( GCC_AR gcc-ar)
@@ -86,14 +90,15 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 if( NOT WIN32)
   set( CMAKE_SYSTEM_INCLUDE_PATH "${CMAKE_FIND_ROOT_PATH}/include" )
   set( CMAKE_SYSTEM_LIBRARY_PATH "${CMAKE_FIND_ROOT_PATH}/lib" )
+
+  ##########################################################################
+  # status messages for generating
+  ##########################################################################
+  message( STATUS "Set CMAKE_FIND_ROOT_PATH to ${CMAKE_FIND_ROOT_PATH}" )
+  message( STATUS "Set CMAKE_SYSTEM_INCLUDE_PATH to ${CMAKE_SYSTEM_INCLUDE_PATH}" )
+  message( STATUS "Set CMAKE_SYSTEM_LIBRARY_PATH to ${CMAKE_SYSTEM_LIBRARY_PATH}" )
 endif()
 
-##########################################################################
-# status messages for generating
-##########################################################################
-message( STATUS "Set CMAKE_FIND_ROOT_PATH to ${CMAKE_FIND_ROOT_PATH}" )
-message( STATUS "Set CMAKE_SYSTEM_INCLUDE_PATH to ${CMAKE_SYSTEM_INCLUDE_PATH}" )
-message( STATUS "Set CMAKE_SYSTEM_LIBRARY_PATH to ${CMAKE_SYSTEM_LIBRARY_PATH}" )
 
 
 
